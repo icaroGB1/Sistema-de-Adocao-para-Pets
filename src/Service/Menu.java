@@ -1,10 +1,10 @@
 package Service;
 
 import java.util.Scanner;
-import java.util.TreeMap;
+
 
 public class Menu {
-    public  int opcoesMenu(){
+    public int opcoesMenu() {
         Scanner input = new Scanner(System.in);
         System.out.println("1 - Cadastrar um novo pet");
         System.out.println("2 - Alterar os dados do pet cadastrado");
@@ -16,23 +16,22 @@ public class Menu {
         return escolha;
     }
 
-    public int validMenu (Scanner sc) {
-        while (true){
+    public int validMenu(Scanner sc) {
+        while (true) {
             System.out.println("Digite um número de 1 a 6: ");
-            if(sc.hasNextInt()){
+            if (sc.hasNextInt()) {
                 int num = sc.nextInt();
-            if(num >=1 && num <=6){
-                return num;
-            }else {
-                System.out.println("Número fora do intervalo. Tente novamente.");
-            }
-            }
-            else {
+                if (num >= 1 && num <= 6) {
+                    return num;
+                } else {
+                    System.out.println("Número fora do intervalo. Tente novamente.");
+                }
+            } else {
                 System.out.println("Entrada inválida. Digite apenas números.");
                 sc.nextLine();
             }
 
-    }
+        }
 
     }
 
