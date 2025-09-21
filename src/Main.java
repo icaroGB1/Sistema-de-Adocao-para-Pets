@@ -1,16 +1,16 @@
-import FileUtils.Arq;
+import Exception.IdadeMaior20Exception;
 import Model.Pet;
-import Model.PetEndereco;
-import Service.Menu;
-import Service.PetService;
+import Service.CadastroPet;
+
+import java.io.IOException;
 
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IdadeMaior20Exception, IOException {
         Scanner sc = new Scanner(System.in);
-        PetService pet = new PetService();
-        Pet pet1 = new Pet();
+        CadastroPet cadPet = new CadastroPet();
+        cadPet.CadastroPet();
     }
 }

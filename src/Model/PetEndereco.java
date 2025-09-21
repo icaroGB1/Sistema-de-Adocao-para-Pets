@@ -7,24 +7,18 @@ public class PetEndereco {
     private String cidade;
     private String rua;
 
+    public static final String naoInformado   = "NÃO INFORMADO";
 
     public  PetEndereco (){
 
-    }
-    public PetEndereco(String cidade, String rua) {
-        this.numeroCasa = validnumeroCasa();
-        if (validCidade(cidade) == true) {
-            this.cidade = cidade;
-            this.rua = rua;
-        }
     }
 
     public int getNumeroCasa() {
         return numeroCasa;
     }
 
-    public void setNumeroCasa(int numeroCasa) {
-        this.numeroCasa = numeroCasa;
+    public void setNumeroCasa() {
+        this.numeroCasa = validnumeroCasa();
     }
 
     public String getCidade() {
@@ -32,7 +26,7 @@ public class PetEndereco {
     }
 
     public void setCidade(String cidade) {
-        this.cidade = cidade;
+        this.cidade = validCidade(cidade);
     }
 
     public String getRua() {
@@ -43,12 +37,12 @@ public class PetEndereco {
         this.rua = rua;
     }
 
-    public boolean validCidade(String cidade) {
+    public String validCidade(String cidade) {
           if (cidade.matches("^[a-zA-Z]*$")) {
-              return true;
+              return cidade;
           } else {
               System.out.println("Cidade invalida");
-              return false;
+              return naoInformado;
           }
     }
 
